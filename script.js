@@ -10,16 +10,16 @@ const url = 'https://api.funtranslations.com/translate/minion.json';
 //functions
 
 const clickHandler = function () {
-  const textToTranslate = userInput.value;
-  //calling server
-  fetch(getTranslationURL(textToTranslate))
-    .then((response) => response.json())
-    .then((json) => {
-      let translatedText = json.contents.translated;
-      output.innerText = translatedText;
-    })
-    .catch(errorHandler);
-};
+    const textToTranslate = userInput.value;
+    //calling server
+    fetch(getTranslationURL(textToTranslate))
+      .then((response) => response.json())
+      .then((json) => {
+        let translatedText = json.contents.translated;
+        output.innerText = translatedText;
+      })
+      .catch(errorHandler);
+  };
 
 const getTranslationURL = function (text) {
   return url + '?text=' + text;
